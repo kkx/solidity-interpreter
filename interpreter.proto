@@ -1,0 +1,38 @@
+ syntax = "proto3";
+
+ package interpreter;
+
+ message Program {
+   Instructions instructions = 1;
+ }
+
+ message Instructions {
+   repeated Instruction instructions = 1;
+ }
+
+ message Instruction {
+   oneof instruction {
+     Push push = 1;
+     Pop pop = 2;
+     Add add = 3;
+     Sub sub = 4;
+     Mul mul = 5;
+   }
+ }
+
+ message Push {
+    int32 value = 1;
+ }
+
+ message Pop {
+    int32 value = 1;
+ }
+
+ message Add {
+ }
+
+ message Sub {
+ }
+
+ message Mul {
+ }

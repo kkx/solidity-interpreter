@@ -1,0 +1,51 @@
+{
+  "name": "green-stable",
+  "description": "Green stable project",
+  "scripts": {
+    "coverage": "yarn typechain && hardhat coverage",
+    "test": "yarn typechain && hardhat test",
+    "compile": "hardhat compile",
+    "typechain": "yarn compile --no-typechain && hardhat typechain",
+    "prettier:solidity": "prettier --write contracts/**/*.sol"
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier:solidity"
+    }
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@typechain/ethers-v5": "^10.0.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.6.0",
+    "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.4",
+    "hardhat": "^2.9.3",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-deploy": "^0.11.4",
+    "hardhat-gas-reporter": "^1.0.8",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.17",
+    "solhint-plugin-prettier": "0.0.5",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.2.0",
+    "typechain": "^8.0.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@lazyledger/protobuf3-solidity-lib": "^0.6.0",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@primitivefi/hardhat-dodoc": "^0.2.3",
+    "@typechain/hardhat": "^2.3.0",
+    "dotenv": "^16.0.0",
+    "solhint": "^3.3.6",
+    "ts-generator": "^0.1.1",
+    "protobufjs": "~6.10.1"
+  }
+}
